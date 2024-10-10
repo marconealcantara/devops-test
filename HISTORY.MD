@@ -10,15 +10,28 @@ kind create cluster --name <nome-do-cluster> --config kind-3nodes.yaml
 
 helm create <nome-do-chart>
 
-4 - enviar a imagem docker pro dockerhub ou fazer build local
+4 - alterar o chart de acordo como necessário
+
+5 - enviar a imagem docker pro dockerhub ou fazer build local
 
 docker build -t app-marcone:latest
 
-5 - instalar a app com o helm
+6 - instalar a app com o helm
 
 helm install app-marcone app-marcone:latest
 
+7 - nao menos importante sempre documentar 
+
+criar arquivo readme.md.gotmpl e utilizar o helm docs para criar o readme.md
+
+helm-docs
+
 ### melhorias no processo
+
+1 - otimizar a imagem em um repo docker ex: docker hub
+2 - construção do cluster via terraform
+3 - deploy utilizando uma pipe de qualquer ci ( jenkins, github actions, bitbucket etc..)
+4 - sobre monitoramente a app não tem nenhuma métrica que expoe para conseguir ler ex: /metrics então nesse caso interessante que ela gerasse essas informaçãos para construção de dashboards
 
 
 
