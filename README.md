@@ -29,10 +29,10 @@ helm upgrade --install app-marcone -f app-marcone/values.yaml app-marcone/ -n ap
 Create a port-forward with the follow command:
 
 ```bash
-kubectl port-forward svc/app-marcone 3000:80 -n app-marcone
+kubectl port-forward svc/app-marcone 8000:80 -n app-marcone
 ```
 
-Open the browser and access the URL: http://localhost:3000
+Open the browser and access the URL: http://localhost:8000
 
 ## Uninstalling the Chart
 

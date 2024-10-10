@@ -28,10 +28,10 @@ helm upgrade --install {{ template "chart.name" . }} -f {{ template "chart.name"
 Create a port-forward with the follow command:
 
 ```bash
-kubectl port-forward svc/{{ template "chart.name" . }} 3000:80 -n {{ template "chart.name" . }}
+kubectl port-forward svc/{{ template "chart.name" . }} 8000:80 -n {{ template "chart.name" . }}
 ```
 
-Open the browser and access the URL: http://localhost:3000
+Open the browser and access the URL: http://localhost:8000
 
 ## Uninstalling the Chart
 
