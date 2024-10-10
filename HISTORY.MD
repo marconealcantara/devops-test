@@ -18,7 +18,7 @@ docker build -t app-marcone:latest
 
 6 - instalar a app com o helm
 
-helm install app-marcone app-marcone:latest
+helm upgrade --install app-marcone -f app-marcone/values.yaml app-marcone/ -n app-marcone
 
 7 - nao menos importante sempre documentar 
 
