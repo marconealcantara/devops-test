@@ -1,15 +1,15 @@
-FROM python:3.9
+FROM python:3.13.0rc1-slim
 
-WORKDIR /code
+WORKDIR /app
 
-ENV LISTEN_PORT 8080
+ENV LISTEN_PORT 8000
 
-EXPOSE 8080
+EXPOSE 8000
 
-COPY ./app/requirements.txt /code/requirements.txt
+COPY requirements.txt ./requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./app /code/app
+COPY api.py ./
 
-CMD ["gunicorn", "--conf", "--bind", "0.0.0.0:80", "app.main:app"]
+CMD ["gunicorn", "-w", "1", "--log-level", "debug", "-b" "0.0.0.0:8000", "api:app"]
