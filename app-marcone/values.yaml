@@ -73,12 +73,12 @@ resources:
 
 livenessProbe:
   httpGet:
-    path: /
-    port: http
+    path: localhost
+    port: 8000
 readinessProbe:
   httpGet:
-    path: /
-    port: http
+    path: localhost
+    port: 8000
 
 autoscaling:
   enabled: true
